@@ -1,1 +1,42 @@
 // sass --watch public/assets/sass/style.scss:public/css/style.css
+*{box-sizing: border-box;margin:0}
+#hand{
+  position:relative;
+  margin:20vh auto;
+  // border:1px solid red;
+  height:60vh;
+  width:60vw;
+  padding-left:10%;
+}
+.finger{
+  display: inline-block;
+  height:20vh;
+  width:20%;
+  border:1px solid black;
+  border-radius: 10%;
+  background-color: burlywood;
+}
+.fifth{
+  transform-origin: bottom;
+  transform: rotate(45deg);
+  float:left;
+}
+#fingers{
+  position:absolute;
+  bottom:20%;
+  left:10%;
+  height:auto;
+  width:80%;
+  // border:1px solid blue;
+  font-size: 0;
+}
+#palm{
+  position:absolute;
+  bottom:0;
+  left:10%;
+  width:80%;
+  height:40%;
+  border:1px solid black;
+  border-radius:10%;
+  background:burlywood;
+}
