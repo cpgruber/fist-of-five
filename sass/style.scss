@@ -21,7 +21,6 @@ $handColor: burlywood;
 .fifth{
   transform-origin: bottom;
   transform: rotate(45deg);
-  float:left;
 }
 #fingers{
   position:absolute;
@@ -40,4 +39,87 @@ $handColor: burlywood;
   border:1px solid black;
   border-radius:10%;
   background:lighten($handColor,10);
+}
+#hand{
+  &.zero{
+    .finger{
+      height:20vh;
+    }
+    .fifth{
+      transform-origin: bottom;
+      transform: rotate(45deg);
+    }
+  }
+  &.one{
+    .first{
+      height:40vh;
+    }
+    .fifth{
+      transform: rotate(48deg);
+      height:21vh
+    }
+  }
+  &.two{
+    .first{
+      height:40vh;
+    }
+    .second{
+      height:43vh;
+    }
+    .fifth{
+      transform: rotate(48deg);
+      height:21vh
+    }
+  }
+  &.three{
+    .first{
+      height:40vh;
+    }
+    .second{
+      height:43vh;
+    }
+    .third{
+      height:41.5vh;
+    }
+    .fifth{
+      transform: rotate(48deg);
+      height:21vh
+    }
+  }
+  &.four{
+    .first{
+      height:40vh;
+    }
+    .second{
+      height:43vh;
+    }
+    .third{
+      height:41.5vh;
+    }
+    .fourth{
+      height:37.5vh;
+    }
+    .fifth{
+      transform: rotate(48deg);
+      height:21vh
+    }
+  }
+  &.five{
+    .first{
+      height:40vh;
+    }
+    .second{
+      height:43vh;
+    }
+    .third{
+      height:41.5vh;
+    }
+    .fourth{
+      height:37.5vh;
+    }
+    .fifth{
+      transform: translate(5vw,0)rotate(-48deg);
+      height:20vh
+    }
+  }
 }

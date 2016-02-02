@@ -19,8 +19,7 @@
 
 .fifth {
   transform-origin: bottom;
-  transform: rotate(45deg);
-  float: left; }
+  transform: rotate(45deg); }
 
 #fingers {
   position: absolute;
@@ -39,5 +38,54 @@
   border: 1px solid black;
   border-radius: 10%;
   background: #e9d0af; }
+
+#hand.zero .finger {
+  height: 20vh; }
+#hand.zero .fifth {
+  transform-origin: bottom;
+  transform: rotate(45deg); }
+#hand.one .first {
+  height: 40vh; }
+#hand.one .fifth {
+  transform: rotate(48deg);
+  height: 21vh; }
+#hand.two .first {
+  height: 40vh; }
+#hand.two .second {
+  height: 43vh; }
+#hand.two .fifth {
+  transform: rotate(48deg);
+  height: 21vh; }
+#hand.three .first {
+  height: 40vh; }
+#hand.three .second {
+  height: 43vh; }
+#hand.three .third {
+  height: 41.5vh; }
+#hand.three .fifth {
+  transform: rotate(48deg);
+  height: 21vh; }
+#hand.four .first {
+  height: 40vh; }
+#hand.four .second {
+  height: 43vh; }
+#hand.four .third {
+  height: 41.5vh; }
+#hand.four .fourth {
+  height: 37.5vh; }
+#hand.four .fifth {
+  transform: rotate(48deg);
+  height: 21vh; }
+#hand.five .first {
+  height: 40vh; }
+#hand.five .second {
+  height: 43vh; }
+#hand.five .third {
+  height: 41.5vh; }
+#hand.five .fourth {
+  height: 37.5vh; }
+#hand.five .fifth {
+  transform: translate(5vw, 0) rotate(-48deg);
+  height: 20vh; }
 
 /*# sourceMappingURL=style.css.map */
