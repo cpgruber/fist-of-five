@@ -43,6 +43,8 @@
   height: 40%;
   border: 1px solid black;
   border-radius: 10%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
   background: #e9d0af; }
 
 #finger-block {
@@ -70,7 +72,7 @@
 #hand.one .fifth {
   transform: rotate(48deg);
   height: 21vh;
-  z-index: 1; }
+  z-index: 2; }
 #hand.two .first {
   height: 40vh;
   background: #e9d0af;

@@ -66,6 +66,8 @@ $handColor: burlywood;
   height:40%;
   border:1px solid black;
   border-radius:10%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
   background:lighten($handColor,10);
 }
 #finger-block{
@@ -101,7 +103,7 @@ $handColor: burlywood;
     .fifth{
       transform: rotate(48deg);
       height:21vh;
-      z-index:1;
+      z-index:2;
     }
   }
   &.two{
