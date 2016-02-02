@@ -1,9 +1,11 @@
 // sass --watch public/assets/sass/style.scss:public/css/style.css
 *{box-sizing: border-box;margin:0}
+
+$handColor: burlywood;
+
 #hand{
   position:relative;
   margin:20vh auto;
-  // border:1px solid red;
   height:60vh;
   width:60vw;
   padding-left:10%;
@@ -11,10 +13,10 @@
 .finger{
   display: inline-block;
   height:20vh;
-  width:20%;
+  width:10%;
   border:1px solid black;
   border-radius: 10%;
-  background-color: burlywood;
+  background-color: $handColor;
 }
 .fifth{
   transform-origin: bottom;
@@ -24,19 +26,18 @@
 #fingers{
   position:absolute;
   bottom:20%;
-  left:10%;
+  left:12%;
   height:auto;
   width:80%;
-  // border:1px solid blue;
   font-size: 0;
 }
 #palm{
   position:absolute;
   bottom:0;
-  left:10%;
-  width:80%;
+  left:20%;
+  width:32%;
   height:40%;
   border:1px solid black;
   border-radius:10%;
-  background:burlywood;
+  background:lighten($handColor,10);
 }
