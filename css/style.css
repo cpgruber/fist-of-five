@@ -10,12 +10,18 @@
   padding-left: 10%; }
 
 .finger {
+  -moz-transition: transform 0.25s,height 0.25s;
+  -o-transition: transform 0.25s,height 0.25s;
+  -webkit-transition: transform 0.25s,height 0.25s;
+  transition: transform 0.25s,height 0.25s;
   display: inline-block;
+  position: relative;
   height: 20vh;
   width: 10%;
   border: 1px solid black;
   border-radius: 10%;
-  background-color: burlywood; }
+  background-color: burlywood;
+  z-index: 1; }
 
 .fifth {
   transform-origin: bottom;
@@ -39,53 +45,100 @@
   border-radius: 10%;
   background: #e9d0af; }
 
+#finger-block {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  position: absolute;
+  left: 10%;
+  width: 40%;
+  height: 18vh;
+  bottom: -1px;
+  background: #e9d0af;
+  z-index: 0; }
+
 #hand.zero .finger {
-  height: 20vh; }
+  height: 20vh;
+  z-index: 1; }
 #hand.zero .fifth {
   transform-origin: bottom;
-  transform: rotate(45deg); }
+  transform: rotate(45deg);
+  z-index: 2; }
 #hand.one .first {
-  height: 40vh; }
+  height: 40vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.one .fifth {
   transform: rotate(48deg);
-  height: 21vh; }
+  height: 21vh;
+  z-index: 1; }
 #hand.two .first {
-  height: 40vh; }
+  height: 40vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.two .second {
-  height: 43vh; }
+  height: 43vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.two .fifth {
   transform: rotate(48deg);
-  height: 21vh; }
+  height: 21vh;
+  z-index: 1; }
 #hand.three .first {
-  height: 40vh; }
+  height: 40vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.three .second {
-  height: 43vh; }
+  height: 43vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.three .third {
-  height: 41.5vh; }
+  height: 41.5vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.three .fifth {
   transform: rotate(48deg);
-  height: 21vh; }
+  height: 21vh;
+  z-index: 1; }
 #hand.four .first {
-  height: 40vh; }
+  height: 40vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.four .second {
-  height: 43vh; }
+  height: 43vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.four .third {
-  height: 41.5vh; }
+  height: 41.5vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.four .fourth {
-  height: 37.5vh; }
+  height: 37.5vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.four .fifth {
   transform: rotate(48deg);
-  height: 21vh; }
+  height: 21vh;
+  z-index: 1; }
 #hand.five .first {
-  height: 40vh; }
+  height: 40vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.five .second {
-  height: 43vh; }
+  height: 43vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.five .third {
-  height: 41.5vh; }
+  height: 41.5vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.five .fourth {
-  height: 37.5vh; }
+  height: 37.5vh;
+  background: #e9d0af;
+  z-index: 0; }
 #hand.five .fifth {
   transform: translate(5vw, 0) rotate(-48deg);
-  height: 20vh; }
+  height: 20vh;
+  background: #e9d0af;
+  z-index: 1; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,30 @@
 
 $handColor: burlywood;
 
+@function mixColors(){
+  // $str: ();
+  // @for $i from 0 through $pct{
+  //   $str:append($str,$first,comma)
+  // }
+  // $rest: $max - $pct;
+  // @for $i from 0 through $rest{
+  //   $str:append($str,$second,comma)
+  // }
+  // @return $str;
+}
+
+@mixin fingerTransition{
+  -moz-transition:transform 0.25s,height 0.25s;
+  -o-transition:transform 0.25s,height 0.25s;
+  -webkit-transition:transform 0.25s,height 0.25s;
+  transition: transform 0.25s,height 0.25s;
+  // background: $color2; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(mixColors($color3,$color2,35,45)); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(mixColors($color3,$color2,35,45)); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(mixColors($color3,$color2,35,45)); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(mixColors($color3,$color2,35,45)); /* Standard syntax */
+}
+
 #hand{
   position:relative;
   margin:20vh auto;
@@ -11,12 +35,15 @@ $handColor: burlywood;
   padding-left:10%;
 }
 .finger{
+  @include fingerTransition;
   display: inline-block;
+  position:relative;
   height:20vh;
   width:10%;
   border:1px solid black;
   border-radius: 10%;
   background-color: $handColor;
+  z-index:1;
 }
 .fifth{
   transform-origin: bottom;
@@ -29,6 +56,7 @@ $handColor: burlywood;
   height:auto;
   width:80%;
   font-size: 0;
+  // border:1px solid green;
 }
 #palm{
   position:absolute;
@@ -40,86 +68,134 @@ $handColor: burlywood;
   border-radius:10%;
   background:lighten($handColor,10);
 }
+#finger-block{
+  // border:1px solid red;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  position:absolute;
+  left:10%;
+  width:40%;
+  height:18vh;
+  bottom:-1px;
+  background:lighten($handColor,10);
+  z-index:0;
+}
 #hand{
   &.zero{
     .finger{
       height:20vh;
+      z-index:1;
     }
     .fifth{
       transform-origin: bottom;
       transform: rotate(45deg);
+      z-index:2;
     }
   }
   &.one{
     .first{
       height:40vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fifth{
       transform: rotate(48deg);
-      height:21vh
+      height:21vh;
+      z-index:1;
     }
   }
   &.two{
     .first{
       height:40vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .second{
       height:43vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fifth{
       transform: rotate(48deg);
-      height:21vh
+      height:21vh;
+      z-index:1;
     }
   }
   &.three{
     .first{
       height:40vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .second{
       height:43vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .third{
       height:41.5vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fifth{
       transform: rotate(48deg);
-      height:21vh
+      height:21vh;
+      z-index:1;
     }
   }
   &.four{
     .first{
       height:40vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .second{
       height:43vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .third{
       height:41.5vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fourth{
       height:37.5vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fifth{
       transform: rotate(48deg);
-      height:21vh
+      height:21vh;
+      z-index:1;
     }
   }
   &.five{
     .first{
       height:40vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .second{
       height:43vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .third{
       height:41.5vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fourth{
       height:37.5vh;
+      background:lighten($handColor,10);
+      z-index:0;
     }
     .fifth{
       transform: translate(5vw,0)rotate(-48deg);
-      height:20vh
+      height:20vh;
+      background:lighten($handColor,10);
+      z-index:1;
     }
   }
 }
