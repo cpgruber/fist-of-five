@@ -2,30 +2,18 @@
   box-sizing: border-box;
   margin: 0; }
 
-#hand {
-  position: relative;
-  margin: 20vh auto;
-  height: 60vh;
-  width: 60vw;
-  padding-left: 10%; }
-
 .finger {
-  -moz-transition: transform 0.25s,height 0.25s;
-  -o-transition: transform 0.25s,height 0.25s;
-  -webkit-transition: transform 0.25s,height 0.25s;
-  transition: transform 0.25s,height 0.25s;
+  -moz-transition: transform 0.75s,height 0.75s;
+  -o-transition: transform 0.75s,height 0.75s;
+  -webkit-transition: transform 0.75s,height 0.75s;
+  transition: transform 0.75s,height 0.75s;
+  transform-origin: top;
   display: inline-block;
   position: relative;
-  height: 20vh;
   width: 10%;
   border: 1px solid black;
   border-radius: 10%;
-  background-color: burlywood;
-  z-index: 1; }
-
-.fifth {
-  transform-origin: bottom;
-  transform: rotate(45deg); }
+  background-color: burlywood; }
 
 #fingers {
   position: absolute;
@@ -43,104 +31,168 @@
   height: 40%;
   border: 1px solid black;
   border-radius: 10%;
-  border-bottom-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
   background: #e9d0af; }
 
 #finger-block {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
   position: absolute;
   left: 10%;
   width: 40%;
-  height: 18vh;
+  height: 18.5vh;
   bottom: -1px;
   background: #e9d0af;
   z-index: 0; }
 
-#hand.zero .finger {
-  height: 20vh;
-  z-index: 1; }
-#hand.zero .fifth {
-  transform-origin: bottom;
-  transform: rotate(45deg);
-  z-index: 2; }
-#hand.one .first {
-  height: 40vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.one .fifth {
-  transform: rotate(48deg);
-  height: 21vh;
-  z-index: 2; }
-#hand.two .first {
-  height: 40vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.two .second {
-  height: 43vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.two .fifth {
-  transform: rotate(48deg);
-  height: 21vh;
-  z-index: 1; }
-#hand.three .first {
-  height: 40vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.three .second {
-  height: 43vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.three .third {
-  height: 41.5vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.three .fifth {
-  transform: rotate(48deg);
-  height: 21vh;
-  z-index: 1; }
-#hand.four .first {
-  height: 40vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.four .second {
-  height: 43vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.four .third {
-  height: 41.5vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.four .fourth {
-  height: 37.5vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.four .fifth {
-  transform: rotate(48deg);
-  height: 21vh;
-  z-index: 1; }
-#hand.five .first {
-  height: 40vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.five .second {
-  height: 43vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.five .third {
-  height: 41.5vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.five .fourth {
-  height: 37.5vh;
-  background: #e9d0af;
-  z-index: 0; }
-#hand.five .fifth {
-  transform: translate(5vw, 0) rotate(-48deg);
-  height: 20vh;
-  background: #e9d0af;
-  z-index: 1; }
+#hand {
+  position: relative;
+  margin: 20vh auto;
+  height: 60vh;
+  width: 60vw;
+  padding-left: 10%; }
+  #hand.zero .finger {
+    z-index: 1; }
+  #hand.zero .first {
+    height: 20vh;
+    transform: translateY(0vh); }
+  #hand.zero .second {
+    height: 22vh;
+    transform: translateY(2vh); }
+  #hand.zero .third {
+    height: 21vh;
+    transform: translateY(1vh); }
+  #hand.zero .fourth {
+    height: 18.5vh;
+    transform: translateY(-1.5vh); }
+  #hand.zero .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(0vw) rotate(45deg);
+    z-index: 2; }
+  #hand.one .finger {
+    z-index: 1; }
+  #hand.one .first {
+    height: 20vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.one .second {
+    height: 22vh;
+    transform: translateY(2vh); }
+  #hand.one .third {
+    height: 21vh;
+    transform: translateY(1vh); }
+  #hand.one .fourth {
+    height: 18.5vh;
+    transform: translateY(-1.5vh); }
+  #hand.one .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(0vw) rotate(48deg);
+    z-index: 2; }
+  #hand.two .finger {
+    z-index: 1; }
+  #hand.two .first {
+    height: 20vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.two .second {
+    height: 22vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.two .third {
+    height: 21vh;
+    transform: translateY(1vh); }
+  #hand.two .fourth {
+    height: 18.5vh;
+    transform: translateY(-1.5vh); }
+  #hand.two .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(0vw) rotate(49deg);
+    z-index: 2; }
+  #hand.three .finger {
+    z-index: 1; }
+  #hand.three .first {
+    height: 20vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.three .second {
+    height: 22vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.three .third {
+    height: 21vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.three .fourth {
+    height: 18.5vh;
+    transform: translateY(-1.5vh); }
+  #hand.three .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(0vw) rotate(50deg);
+    z-index: 2; }
+  #hand.four .finger {
+    z-index: 1; }
+  #hand.four .first {
+    height: 20vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.four .second {
+    height: 22vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.four .third {
+    height: 21vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.four .fourth {
+    height: 18.5vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.four .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(0vw) rotate(48deg);
+    z-index: 2; }
+  #hand.five .finger {
+    z-index: 1; }
+  #hand.five .first {
+    height: 20vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.five .second {
+    height: 22vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.five .third {
+    height: 21vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.five .fourth {
+    height: 18.5vh;
+    background: #e9d0af;
+    z-index: 0;
+    transform: translateY(4.5vh) rotateX(-165deg); }
+  #hand.five .fifth {
+    height: 19.5vh;
+    transform-origin: bottom;
+    transform: translateX(5vw) rotate(-40deg);
+    z-index: 0;
+    background: #e9d0af;
+    border-bottom: none; }
 
 /*# sourceMappingURL=style.css.map */
