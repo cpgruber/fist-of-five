@@ -1,10 +1,11 @@
 // sass --watch public/sass/style.scss:public/css/style.css
 @import url(https://fonts.googleapis.com/css?family=VT323);
 $handColor: burlywood;
-$heights: (20,22,21,18.5,19.5);
-$mainOffset: 20;
+// $heights: (20,22,21,18.5,19.5);
+$heights:(150,170,160,140,140);
+$mainOffset: 150;
 $thumbH: nth($heights, 5);
-$dimension: 400;
+$dimension: 375;
 $bColors:(blue,red,green,orange,yellow,purple);
 $bIdx: random(length($bColors));
 @function getRandom(){
@@ -26,19 +27,19 @@ $pFont:'VT323',sans-serif;
   }
 }
 @mixin fingerDown($h){
-  height:$h+vh;
-  transform:translateY(($h - $mainOffset)+vh);
+  height:($h)+px;
+  transform:translateY(($h - $mainOffset)+px)
 }
 @mixin fingerUp($h){
-  height:$h+vh;
+  height:($h)+px;
   background:lighten($handColor,10);
   z-index:0;
-  transform: translateY((4.5)+vh)rotateX(-165deg);
+  transform:translateY(($h - $mainOffset + 20)+px)rotateX(-165deg);
 }
 @mixin thumb($h,$a,$z,$x){
-  height:$h+vh;
+  height:($h)+px;
   transform-origin: bottom;
-  transform: translateX(($x)+px)rotate(($a)+deg);
+  transform: translateY(-25px)translateX(($x)+px)rotate(($a)+deg);
   z-index:$z;
 }
 @mixin upDown($idx,$finger,$h){
@@ -69,6 +70,7 @@ $pFont:'VT323',sans-serif;
   margin:0
 }
 body{
+  width:100vw;
   background:lighten($bodyColor,40);
 }
 .finger{
@@ -118,37 +120,37 @@ body{
   &.zero{
     @include handState(0);
     .fifth{
-      @include thumb($thumbH,45,2,0)
+      @include thumb($thumbH,65,2,0)
     }
   }
   &.one{
     @include handState(1);
     .fifth{
-      @include thumb($thumbH,48,2,0)
+      @include thumb($thumbH,62,2,0)
     }
   }
   &.two{
     @include handState(2);
     .fifth{
-      @include thumb($thumbH,49,2,0)
+      @include thumb($thumbH,65,2,0)
     }
   }
   &.three{
     @include handState(3);
     .fifth{
-      @include thumb($thumbH,50,2,0)
+      @include thumb($thumbH,63,2,0)
     }
   }
   &.four{
     @include handState(4);
     .fifth{
-      @include thumb($thumbH,48,2,0)
+      @include thumb($thumbH,60,2,0)
     }
   }
   &.five{
     @include handState(5);
     .fifth{
-      @include thumb($thumbH,-40,1,65);
+      @include thumb($thumbH,-50,1,65);
       background:lighten($handColor,10);
       border-bottom:none;
     }
@@ -196,10 +198,18 @@ header{
   background:lighten($bodyColor,30);
   font-size: 54px;
   font-weight: bold;
+  margin-bottom:20px;
+}
+footer{
+  margin-top:35vh;
+  padding:20px;
+  background:lighten($bodyColor,30);
+  font-size: 22px;
+  text-align: center;
 }
 button{
   margin:0 auto;
-  margin-top:150px;
+  margin-top:100px;
   height:auto;
   width:auto;
   padding:10px;
@@ -217,10 +227,24 @@ button{
 }
 input{
   display:block;
-  width:550px;
+  width:100%;
   height:50px;
   font-size:32px;
   margin:30px auto;
   border-radius: 10px;
-  padding-left:10px;
+  padding-left:5px;
+}
+input, button{
+  &:focus,&:active{
+    outline:none;
+  }
+}
+a{
+  color:black;
+  &:active,&:focus,&:visited{
+    color:black;
+  }
+  &:hover{
+    font-weight:bold;
+  }
 }
