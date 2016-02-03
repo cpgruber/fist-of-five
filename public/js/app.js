@@ -28,9 +28,10 @@ function processPoll(poll){
     text = "zero";
   }
   hand.className = text;
-}
+  var avg = document.querySelector("#vote-avg");
+  var voteAvg = (votes == 0)?"No votes":(sum/votes).toFixed(2);
+  avg.textContent = voteAvg;
 
-function countPoll(poll){
   Object.keys(poll).forEach(function(key){
     var ct = document.querySelector(".counts li[value="+key+"]");
     ct.textContent = (poll[key]>0)?poll[key]:"";
@@ -39,7 +40,6 @@ function countPoll(poll){
 
 socket.on("poll", function(poll){
   processPoll(poll);
-  countPoll(poll);
 })
 
 socket.on("count", function(count){
