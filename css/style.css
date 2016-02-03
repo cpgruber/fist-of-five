@@ -194,4 +194,22 @@
     background: #e9d0af;
     border-bottom: none; }
 
+ul {
+  display: block;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 40px; }
+
+li {
+  display: inline-block;
+  line-height: 50px;
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer; }
+  li.selected {
+    background: #ff3333; }
+
 /*# sourceMappingURL=style.css.map */
