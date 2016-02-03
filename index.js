@@ -2,13 +2,14 @@ var express = require("express");
 var hbs = require("hbs");
 var randomString = require("random-string");
 var app = express();
+var Poll = require("./models/poll");
 
 app.set('view engine', 'hbs');
 app.set("views","./views");
 app.use(express.static(__dirname + '/public'));
 
 app.get("/:id", function(req,res){
-  res.render("poll.hbs")
+  res.render("poll.hbs");
 })
 
 app.get("/", function(req,res){
@@ -16,22 +17,40 @@ app.get("/", function(req,res){
 })
 
 app.post("/", function(req,res){
-  res.json({code:randomString()})
+  var usercode = randomString();
+  var fist = {
+    zero:0,
+    one:0,
+    two:0,
+    three:0,
+    four:0,
+    five:0
+  }
+  var newPoll = new Poll({createdAt:Date(),count:0,code:usercode,fist:fist})
+  newPoll.save(function(err, doc){
+    if(!err){
+      res.json({code:doc.code})
+    }
+  })
 })
 
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 io.on('connection', function(socket){
-  console.log('user connected');
-  socket.on("start stream", function(b){
-    console.log("b="+b)
-  });
+
+  // join to room and save the room name
+  socket.on("join room", function (room) {
+    socket.join(room);
+    console.log("joined "+room);
+    socket.on("vote",function(vote){
+      io.in(room).emit("vote",vote)
+    })
+  })
 
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+    console.log("disconnected")
   });
-
 });
 
 var port = process.env.PORT || 3000;
