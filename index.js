@@ -8,8 +8,27 @@ app.set('view engine', 'hbs');
 app.set("views","./views");
 app.use(express.static(__dirname + '/public'));
 
+function generateCode(){
+  return new Promise(function(resolve,reject){
+    var usercode = randomString().toUpperCase();
+    Poll.findOne({code:usercode}, function(err,doc){
+      if(!err && doc){
+        generateCode();
+      }else{
+        resolve(usercode);
+      }
+    })
+  })
+}
+
 app.get("/:id", function(req,res){
-  res.render("poll.hbs");
+  Poll.findOne({code:req.params.id}, function(err,doc){
+    if(!err && doc){
+      res.render("poll.hbs");
+    }else{
+      res.send("Whoops, that poll isn't here")
+    }
+  })
 })
 
 app.get("/", function(req,res){
@@ -17,7 +36,7 @@ app.get("/", function(req,res){
 })
 
 app.post("/", function(req,res){
-  var usercode = randomString();
+  // var usercode = randomString().toUpperCase();
   var fist = {
     zero:0,
     one:0,
@@ -26,11 +45,13 @@ app.post("/", function(req,res){
     four:0,
     five:0
   }
-  var newPoll = new Poll({createdAt:Date(),count:0,code:usercode,fist:fist})
-  newPoll.save(function(err, doc){
-    if(!err){
-      res.json({code:doc.code})
-    }
+  generateCode().then(function(usercode){
+    var newPoll = new Poll({createdAt:new Date(),count:0,code:usercode,fist:fist})
+    newPoll.save(function(err, doc){
+      if(!err){
+        res.json({code:doc.code})
+      }
+    })
   })
 })
 
