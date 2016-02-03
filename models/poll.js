@@ -6,9 +6,7 @@ var Schema = mongoose.Schema,
 
 var PollSchema = new Schema({
   createdAt: Date,
-  count: Number,
-  code:String,
-  fist:Object
+  code:String
 })
 
 var PollModel = mongoose.model("Poll", PollSchema);

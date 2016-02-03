@@ -35,17 +35,10 @@ app.get("/", function(req,res){
   res.render("index.hbs")
 })
 
+//todo: write poll results to database
 app.post("/", function(req,res){
-  var fist = {
-    zero:0,
-    one:0,
-    two:0,
-    three:0,
-    four:0,
-    five:0
-  }
   generateCode().then(function(usercode){
-    var newPoll = new Poll({createdAt:new Date(),count:0,code:usercode,fist:fist})
+    var newPoll = new Poll({createdAt:new Date(),code:usercode})
     newPoll.save(function(err, doc){
       if(!err){
         res.json({code:doc.code})
