@@ -3,10 +3,10 @@
   margin: 0; }
 
 .finger {
-  -moz-transition: transform 0.75s, height 0.75s;
-  -o-transition: transform 0.75s, height 0.75s;
-  -webkit-transition: transform 0.75s, height 0.75s;
-  transition: transform 0.75s, height 0.75s;
+  -moz-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
+  -o-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
+  -webkit-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
+  transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
   transform-origin: top;
   display: inline-block;
   position: relative;

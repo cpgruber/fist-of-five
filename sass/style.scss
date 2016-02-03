@@ -8,10 +8,10 @@ $thumbH: nth($heights, 5);
 $dimension: 400;
 
 @mixin fingerTransition($speed){
-  -moz-transition:transform ($speed)+s,height ($speed)+s;
-  -o-transition:transform ($speed)+s,height ($speed)+s;
-  -webkit-transition:transform ($speed)+s,height ($speed)+s;
-  transition: transform ($speed)+s,height ($speed)+s;
+  -moz-transition:transform ($speed)+s,height ($speed)+s, background ($speed)+s, z-index ($speed)+s;
+  -o-transition:transform ($speed)+s,height ($speed)+s, background ($speed)+s, z-index ($speed)+s;
+  -webkit-transition:transform ($speed)+s,height ($speed)+s, background ($speed)+s, z-index ($speed)+s;
+  transition: transform ($speed)+s,height ($speed)+s, background ($speed)+s, z-index ($speed)+s;
   transform-origin: top;
 }
 @mixin fingerZ{
