@@ -9,16 +9,27 @@
     <div id="finger-block"></div>
   </div>
 </div>
-<ul>
-  <li value="zero">0</li>
-  <li value="one">1</li>
-  <li value="two">2</li>
-  <li value="three">3</li>
-  <li value="four">4</li>
-  <li value="five">5</li>
-</ul>
-<p>
-  Active Users: <span id="count">0</span>
-</p>
+<div id="ui">
+  <ul class="votes">
+    <li value="zero">0</li>
+    <li value="one">1</li>
+    <li value="two">2</li>
+    <li value="three">3</li>
+    <li value="four">4</li>
+    <li value="five">5</li>
+  </ul>
+  <ul class="counts">
+    <li value="zero"></li>
+    <li value="one"></li>
+    <li value="two"></li>
+    <li value="three"></li>
+    <li value="four"></li>
+    <li value="five"></li>
+  </ul>
+  <p>
+    Active Users: <span id="count">0</span>
+  </p>
+</div>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/app.js"></script>

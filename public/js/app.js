@@ -2,7 +2,7 @@ var pathname = window.location.pathname;
 var socket = io();
 socket.emit("join room", pathname)
 
-var fingers = document.querySelectorAll("li");
+var fingers = document.querySelectorAll(".votes li");
 var hand = document.querySelector("#hand");
 for(var i=0;i<fingers.length;i++){
   fingers[i].addEventListener("click", function(){
@@ -30,8 +30,16 @@ function processPoll(poll){
   hand.className = text;
 }
 
+function countPoll(poll){
+  Object.keys(poll).forEach(function(key){
+    var ct = document.querySelector(".counts li[value="+key+"]");
+    ct.textContent = (poll[key]>0)?poll[key]:"";
+  })
+}
+
 socket.on("poll", function(poll){
   processPoll(poll);
+  countPoll(poll);
 })
 
 socket.on("count", function(count){

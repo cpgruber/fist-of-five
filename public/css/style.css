@@ -199,26 +199,37 @@ body {
     background: #e9d0af;
     border-bottom: none; }
 
-ul {
-  display: block;
-  margin: 50px auto;
-  text-align: center;
-  font-size: 0; }
-
-li {
-  display: inline-block;
-  line-height: 45px;
-  vertical-align: middle;
-  height: 50px;
-  width: 50px;
-  font-size: 40px;
-  border: 1px solid black;
-  border-radius: 5px;
-  cursor: pointer; }
-  li.selected {
-    background: #ff6666; }
-  li:first-of-type {
-    margin-left: -5%; }
+#ui {
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  width: 400px;
+  margin: 20px auto 0 auto; }
+  #ui ul {
+    padding: 0;
+    font-size: 0; }
+  #ui li {
+    display: inline-block;
+    text-align: center;
+    line-height: 65.57377px;
+    vertical-align: middle;
+    height: 65.57377px;
+    width: 65.57377px;
+    font-size: 65.57377px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer; }
+    #ui li.selected {
+      background: #ff6666; }
+  #ui .counts li {
+    line-height: 32.78689px;
+    height: 32.78689px;
+    cursor: default;
+    border: none;
+    font-size: 25px; }
+  #ui p {
+    text-align: right;
+    padding: 5px; }
 
 header {
   padding: 20px;

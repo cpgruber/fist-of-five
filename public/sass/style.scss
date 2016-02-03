@@ -10,7 +10,7 @@ $bIdx: random(length($bColors));
 @function getRandom(){
   @return nth($bColors,$bIdx);
 }
-$bodyColor: getRandom();
+$bodyColor: red;//otherwise getRandom();
 $pFont:'VT323',sans-serif;
 
 @mixin fingerTransition($speed){
@@ -154,27 +154,41 @@ body{
     }
   }
 }
-ul{
-  display:block;
-  margin:50px auto;
-  text-align: center;
-  font-size:0;
-}
-li{
-  display:inline-block;
-  line-height: 45px;
-  vertical-align: middle;
-  height:50px;
-  width:50px;
-  font-size: 40px;
-  border:1px solid black;
-  border-radius:5px;
-  cursor: pointer;
-  &.selected{
-    background:lighten($bodyColor,20)
+#ui{
+  position:relative;
+  margin:0 auto;
+  height:auto;
+  width:($dimension)+px;
+  margin:20px auto 0 auto;
+  ul{
+    padding:0;
+    font-size:0;
   }
-  &:first-of-type{
-    margin-left:-5%;
+  li{
+    display:inline-block;
+    text-align: center;
+    line-height: ($dimension/6.1)+px;
+    vertical-align: middle;
+    height:($dimension/6.1)+px;
+    width:($dimension/6.1)+px;
+    font-size: ($dimension/6.1)+px;
+    border:1px solid black;
+    border-radius:5px;
+    cursor: pointer;
+    &.selected{
+      background:lighten($bodyColor,20)
+    }
+  }
+  .counts li{
+    line-height: ($dimension/12.2)+px;
+    height:($dimension/12.2)+px;
+    cursor:default;
+    border:none;
+    font-size: ($dimension/16)+px;
+  }
+  p{
+    text-align: right;
+    padding:5px;
   }
 }
 header{
