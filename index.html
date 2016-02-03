@@ -6,15 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <ul>
-    <li>zero</li>
-    <li>one</li>
-    <li>two</li>
-    <li>three</li>
-    <li>four</li>
-    <li>five</li>
-  </ul>
-  <div id="hand" class="zero">
+  <div id="hand" class="three">
     <div id="palm"></div>
     <div id="fingers">
       <div class="fifth finger"></div>
@@ -25,14 +17,5 @@
       <div id="finger-block"></div>
     </div>
   </div>
-  <script type="text/javascript">
-    var items = document.querySelectorAll("li");
-    var hand = document.querySelector("#hand");
-    for (var i=0;i<items.length;i++){
-      items[i].addEventListener("mouseover",function(){
-        hand.className = this.textContent;
-      })
-    };
-  </script>
 </body>
 </html>

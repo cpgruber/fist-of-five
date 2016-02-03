@@ -3,14 +3,14 @@
   margin: 0; }
 
 .finger {
-  -moz-transition: transform 0.75s,height 0.75s;
-  -o-transition: transform 0.75s,height 0.75s;
-  -webkit-transition: transform 0.75s,height 0.75s;
-  transition: transform 0.75s,height 0.75s;
+  -moz-transition: transform 0.75s, height 0.75s;
+  -o-transition: transform 0.75s, height 0.75s;
+  -webkit-transition: transform 0.75s, height 0.75s;
+  transition: transform 0.75s, height 0.75s;
   transform-origin: top;
   display: inline-block;
   position: relative;
-  width: 10%;
+  width: 20%;
   border: 1px solid black;
   border-radius: 10%;
   background-color: burlywood; }
@@ -18,7 +18,7 @@
 #fingers {
   position: absolute;
   bottom: 20%;
-  left: 12%;
+  left: 0%;
   height: auto;
   width: 80%;
   font-size: 0; }
@@ -26,8 +26,8 @@
 #palm {
   position: absolute;
   bottom: 0;
-  left: 20%;
-  width: 32%;
+  left: 17%;
+  width: 63%;
   height: 40%;
   border: 1px solid black;
   border-radius: 10%;
@@ -37,19 +37,18 @@
 
 #finger-block {
   position: absolute;
-  left: 10%;
-  width: 40%;
-  height: 18.5vh;
+  left: 20%;
+  width: 80%;
+  height: 83%;
   bottom: -1px;
   background: #e9d0af;
   z-index: 0; }
 
 #hand {
   position: relative;
-  margin: 20vh auto;
-  height: 60vh;
-  width: 60vw;
-  padding-left: 10%; }
+  margin: 0 auto;
+  height: 400px;
+  width: 400px; }
   #hand.zero .finger {
     z-index: 1; }
   #hand.zero .first {
@@ -67,7 +66,7 @@
   #hand.zero .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(0vw) rotate(45deg);
+    transform: translateX(0px) rotate(45deg);
     z-index: 2; }
   #hand.one .finger {
     z-index: 1; }
@@ -88,7 +87,7 @@
   #hand.one .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(0vw) rotate(48deg);
+    transform: translateX(0px) rotate(48deg);
     z-index: 2; }
   #hand.two .finger {
     z-index: 1; }
@@ -111,7 +110,7 @@
   #hand.two .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(0vw) rotate(49deg);
+    transform: translateX(0px) rotate(49deg);
     z-index: 2; }
   #hand.three .finger {
     z-index: 1; }
@@ -136,7 +135,7 @@
   #hand.three .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(0vw) rotate(50deg);
+    transform: translateX(0px) rotate(50deg);
     z-index: 2; }
   #hand.four .finger {
     z-index: 1; }
@@ -163,7 +162,7 @@
   #hand.four .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(0vw) rotate(48deg);
+    transform: translateX(0px) rotate(48deg);
     z-index: 2; }
   #hand.five .finger {
     z-index: 1; }
@@ -190,8 +189,8 @@
   #hand.five .fifth {
     height: 19.5vh;
     transform-origin: bottom;
-    transform: translateX(5vw) rotate(-40deg);
-    z-index: 0;
+    transform: translateX(65px) rotate(-40deg);
+    z-index: 1;
     background: #e9d0af;
     border-bottom: none; }
 

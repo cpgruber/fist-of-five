@@ -5,12 +5,13 @@ $handColor: burlywood;
 $heights: (20,22,21,18.5,19.5);
 $mainOffset: 20;
 $thumbH: nth($heights, 5);
+$dimension: 400;
 
-@mixin fingerTransition{
-  -moz-transition:transform 0.75s,height 0.75s;
-  -o-transition:transform 0.75s,height 0.75s;
-  -webkit-transition:transform 0.75s,height 0.75s;
-  transition: transform 0.75s,height 0.75s;
+@mixin fingerTransition($speed){
+  -moz-transition:transform ($speed)+s,height ($speed)+s;
+  -o-transition:transform ($speed)+s,height ($speed)+s;
+  -webkit-transition:transform ($speed)+s,height ($speed)+s;
+  transition: transform ($speed)+s,height ($speed)+s;
   transform-origin: top;
 }
 @mixin fingerZ{
@@ -31,7 +32,7 @@ $thumbH: nth($heights, 5);
 @mixin thumb($h,$a,$z,$x){
   height:$h+vh;
   transform-origin: bottom;
-  transform: translateX(($x)+vw)rotate(($a)+deg);
+  transform: translateX(($x)+px)rotate(($a)+deg);
   z-index:$z;
 }
 @mixin upDown($idx,$finger,$h){
@@ -58,10 +59,10 @@ $thumbH: nth($heights, 5);
 }
 
 .finger{
-  @include fingerTransition;
+  @include fingerTransition(0.75);
   display: inline-block;
   position:relative;
-  width:10%;
+  width:20%;
   border:1px solid black;
   border-radius: 10%;
   background-color: $handColor;
@@ -69,7 +70,7 @@ $thumbH: nth($heights, 5);
 #fingers{
   position:absolute;
   bottom:20%;
-  left:12%;
+  left:0%;
   height:auto;
   width:80%;
   font-size:0;
@@ -77,8 +78,8 @@ $thumbH: nth($heights, 5);
 #palm{
   position:absolute;
   bottom:0;
-  left:20%;
-  width:32%;
+  left:17%;
+  width:63%;
   height:40%;
   border:1px solid black;
   border-radius:10%;
@@ -88,19 +89,18 @@ $thumbH: nth($heights, 5);
 }
 #finger-block{
   position:absolute;
-  left:10%;
-  width:40%;
-  height:18.5vh;
+  left:20%;
+  width:80%;
+  height:83%;
   bottom:-1px;
   background:lighten($handColor,10);
   z-index:0;
 }
 #hand{
   position:relative;
-  margin:20vh auto;
-  height:60vh;
-  width:60vw;
-  padding-left:10%;
+  margin:0 auto;
+  height:($dimension)+px;
+  width:($dimension)+px;
 
   &.zero{
     @include handState(0);
@@ -135,7 +135,7 @@ $thumbH: nth($heights, 5);
   &.five{
     @include handState(5);
     .fifth{
-      @include thumb($thumbH,-40,0,5);
+      @include thumb($thumbH,-40,1,65);
       background:lighten($handColor,10);
       border-bottom:none;
     }
