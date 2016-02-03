@@ -1,6 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
 * {
+  font-family: "VT323", sans-serif;
   box-sizing: border-box;
   margin: 0; }
+
+body {
+  background: #ccccff; }
 
 .finger {
   -moz-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
@@ -198,33 +203,49 @@ ul {
   display: block;
   margin: 50px auto;
   text-align: center;
-  font-size: 40px; }
+  font-size: 0; }
 
 li {
   display: inline-block;
-  line-height: 50px;
+  line-height: 45px;
   vertical-align: middle;
   height: 50px;
   width: 50px;
+  font-size: 40px;
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer; }
   li.selected {
-    background: #ff3333; }
+    background: #6666ff; }
+  li:first-of-type {
+    margin-left: -5%; }
+
+header {
+  padding: 20px;
+  background: #9999ff;
+  font-size: 54px;
+  font-weight: bold; }
 
 button {
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 150px;
   height: 100px;
   width: auto;
+  padding: 10px;
   font-size: 48px;
-  display: block; }
+  display: block;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #0000ad;
+  color: white; }
 
 input {
   display: block;
   width: 550px;
   height: 50px;
   font-size: 32px;
-  margin: 0 auto; }
+  margin: 30px auto;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

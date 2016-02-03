@@ -1,11 +1,12 @@
-// sass --watch public/assets/sass/style.scss:public/css/style.css
-*{box-sizing: border-box;margin:0}
-
+// sass --watch public/sass/style.scss:public/css/style.css
+@import url(https://fonts.googleapis.com/css?family=VT323);
 $handColor: burlywood;
 $heights: (20,22,21,18.5,19.5);
 $mainOffset: 20;
 $thumbH: nth($heights, 5);
 $dimension: 400;
+$bodyColor: blue;
+$pFont:'VT323',sans-serif;
 
 @mixin fingerTransition($speed){
   -moz-transition:transform ($speed)+s,height ($speed)+s, background ($speed)+s, z-index ($speed)+s;
@@ -57,7 +58,14 @@ $dimension: 400;
     @include upDown($idx,4,nth($heights, 4))
   }
 }
-
+*{
+  font-family: $pFont;
+  box-sizing: border-box;
+  margin:0
+}
+body{
+  background:lighten($bodyColor,40);
+}
 .finger{
   @include fingerTransition(0.75);
   display: inline-block;
@@ -145,33 +153,50 @@ ul{
   display:block;
   margin:50px auto;
   text-align: center;
-  font-size: 40px;
+  font-size:0;
 }
 li{
   display:inline-block;
-  line-height: 50px;
+  line-height: 45px;
   vertical-align: middle;
   height:50px;
   width:50px;
+  font-size: 40px;
   border:1px solid black;
   border-radius:5px;
   cursor: pointer;
   &.selected{
-    background:lighten(red,10)
+    background:lighten($bodyColor,20)
   }
+  &:first-of-type{
+    margin-left:-5%;
+  }
+}
+header{
+  padding:20px;
+  background:lighten($bodyColor,30);
+  font-size: 54px;
+  font-weight: bold;
 }
 button{
   margin:0 auto;
-  margin-top:200px;
+  margin-top:150px;
   height:100px;
   width:auto;
+  padding:10px;
   font-size:48px;
   display:block;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor:pointer;
+  background: darken($bodyColor,16);
+  color:white;
 }
 input{
   display:block;
   width:550px;
   height:50px;
   font-size:32px;
-  margin:0 auto;
+  margin:30px auto;
+  border-radius: 10px;
 }
