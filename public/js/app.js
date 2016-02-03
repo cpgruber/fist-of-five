@@ -1,3 +1,6 @@
+var socket = io();
+socket.emit("start stream",true);
+
 var fingers = document.querySelectorAll("li");
 var hand = document.querySelector("#hand");
 for(var i=0;i<fingers.length;i++){
