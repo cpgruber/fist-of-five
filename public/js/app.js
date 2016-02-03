@@ -6,27 +6,32 @@ var fingers = document.querySelectorAll("li");
 var hand = document.querySelector("#hand");
 for(var i=0;i<fingers.length;i++){
   fingers[i].addEventListener("click", function(){
-    var vote = this.getAttribute("value");
-    hand.className = vote;
     var selected = document.querySelector(".selected");
-    selected.className = "";
+    if (selected){
+      selected.className = "";
+    }
     this.className = "selected";
+    var vote = this.getAttribute("value");
     socket.emit("vote", vote);
   })
 }
 
-// socket.on("current vote", function(poll){
-//   console.log(poll)
-// })
+function processPoll(poll){
+  var votes = 0;
+  Object.keys(poll).forEach(function(key) {
+    votes+= poll[key];
+  });
+  var sum = poll.one+(poll.two*2)+(poll.three*3)+(poll.four*4)+(poll.five*5);
+  var mean = Math.round(sum/votes);
+  var text = (mean==0)?"zero":(mean==1)?"one":(mean==2)?"two":(mean==3)?"three":(mean==4)?"four":"five";
+  if (votes == 0){
+    text = "zero";
+  }
+  hand.className = text;
+}
 
 socket.on("poll", function(poll){
-  console.log(poll)
-  // console.log("got a vote for "+vote)
-  // hand.className = vote;
-  // var selected = document.querySelector(".selected");
-  // selected.className = "";
-  // var finger = document.querySelector("li[value="+vote+"]");
-  // finger.className = "selected";
+  processPoll(poll);
 })
 
 socket.on("count", function(count){
