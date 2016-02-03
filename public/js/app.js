@@ -16,6 +16,7 @@ for(var i=0;i<fingers.length;i++){
 }
 
 socket.on("vote", function(vote){
+  console.log(vote)
   console.log("got a vote for "+vote)
   hand.className = vote;
   var selected = document.querySelector(".selected");
