@@ -5,7 +5,7 @@
   margin: 0; }
 
 body {
-  background: #ccccff; }
+  background: #ffcccc; }
 
 .finger {
   -moz-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
@@ -216,20 +216,20 @@ li {
   border-radius: 5px;
   cursor: pointer; }
   li.selected {
-    background: #6666ff; }
+    background: #ff6666; }
   li:first-of-type {
     margin-left: -5%; }
 
 header {
   padding: 20px;
-  background: #9999ff;
+  background: #ff9999;
   font-size: 54px;
   font-weight: bold; }
 
 button {
   margin: 0 auto;
   margin-top: 150px;
-  height: 100px;
+  height: auto;
   width: auto;
   padding: 10px;
   font-size: 48px;
@@ -237,8 +237,11 @@ button {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  background: #0000ad;
+  background: #ad0000;
   color: white; }
+  button.copy {
+    margin-top: 0;
+    font-size: 24px; }
 
 input {
   display: block;

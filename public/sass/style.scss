@@ -186,7 +186,7 @@ header{
 button{
   margin:0 auto;
   margin-top:150px;
-  height:100px;
+  height:auto;
   width:auto;
   padding:10px;
   font-size:48px;
@@ -196,6 +196,10 @@ button{
   cursor:pointer;
   background: darken($bodyColor,16);
   color:white;
+  &.copy{
+    margin-top:0;
+    font-size:24px;
+  }
 }
 input{
   display:block;

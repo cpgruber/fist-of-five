@@ -106,7 +106,7 @@ io.on('connection', function(socket){
       clients[socket.id]["last_vote"] = clients[socket.id]["vote"];
     }
     clients[socket.id]["vote"] = vote;
-    console.log(clients)
+
 
     // addVote(room,vote).then(function(poll){
     //   io.in(room).emit("vote",poll)
@@ -116,8 +116,12 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log("disconnected")
     rooms[clients[socket.id].room].count--;
-    console.log("Goodbye. Now "+rooms[clients[socket.id].room].count+" in room.")
+    console.log("Goodbye. Now "+rooms[clients[socket.id].room].count+" in room.");
+    if (rooms[clients[socket.id].room].count == 0){
+      delete rooms[clients[socket.id].room];
+    }
     delete clients[socket.id];
+
   });
 });
 
