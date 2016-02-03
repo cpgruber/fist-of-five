@@ -31,34 +31,6 @@ app.get("/:id", function(req,res){
   })
 })
 
-// function addVote(room,vote){
-//   return new Promise(function(resolve,reject){
-//     Poll.findOne({code:room.replace("/","")}, function(err, poll){
-//       if (!err && poll){
-//         poll.fist[vote]++;
-//         poll.save(function(err){
-//           if(!err){
-//             resolve(poll);
-//           }
-//         })
-//       }
-//     })
-//   })
-// }
-
-// app.post("/:id", function(req,res){
-//   Poll.findOne({code:req.params.id}, function(err,poll){
-//     if(!err && poll){
-//       poll.fist[req.query.vote]++;
-//       poll.save(function(err){
-//         res.json(poll)
-//       })
-//     }else{
-//       res.send("Whoops, that poll isn't here")
-//     }
-//   })
-// })
-
 app.get("/", function(req,res){
   res.render("index.hbs")
 })
@@ -122,11 +94,19 @@ io.on('connection', function(socket){
 
   socket.on("disconnect", function(){
     var roomId = clients[socket.id].room;
+    var room = rooms[roomId];
     console.log("left "+roomId)
-    rooms[roomId].count--;
-    console.log("Goodbye. Now "+rooms[clients[socket.id].room].count+" in room.");
-    io.in(roomId).emit("count",rooms[roomId].count)
-    if (rooms[clients[socket.id].room].count == 0){
+    room.count--;
+    console.log("Goodbye. Now "+room.count+" in room.");
+    io.in(roomId).emit("count",room.count)
+
+    var last = clients[socket.id].vote;
+    if (last !== null){
+      room.poll[last]--;
+      io.in(roomId).emit("poll",room.poll);
+    }
+
+    if (room.count == 0){
       delete rooms[clients[socket.id].room];
     }
     delete clients[socket.id];
