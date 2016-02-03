@@ -212,4 +212,19 @@ li {
   li.selected {
     background: #ff3333; }
 
+button {
+  margin: 0 auto;
+  margin-top: 200px;
+  height: 100px;
+  width: auto;
+  font-size: 48px;
+  display: block; }
+
+input {
+  display: block;
+  width: 550px;
+  height: 50px;
+  font-size: 32px;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=style.css.map */

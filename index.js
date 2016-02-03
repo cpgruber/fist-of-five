@@ -1,17 +1,22 @@
 var express = require("express");
 var hbs = require("hbs");
+var randomString = require("random-string");
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 app.set("views","./views");
+app.use(express.static(__dirname + '/public'));
+
+app.get("/:id", function(req,res){
+  res.render("poll.hbs")
+})
 
 app.get("/", function(req,res){
   res.render("index.hbs")
 })
 
-app.get("/poll", function(req,res){
-  res.render("poll.hbs")
+app.post("/", function(req,res){
+  res.json({code:randomString()})
 })
 
 var http = require('http').Server(app);
