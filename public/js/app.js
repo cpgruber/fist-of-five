@@ -15,12 +15,21 @@ for(var i=0;i<fingers.length;i++){
   })
 }
 
-socket.on("vote", function(vote){
-  console.log(vote)
-  console.log("got a vote for "+vote)
-  hand.className = vote;
-  var selected = document.querySelector(".selected");
-  selected.className = "";
-  var finger = document.querySelector("li[value="+vote+"]");
-  finger.className = "selected";
+// socket.on("current vote", function(poll){
+//   console.log(poll)
+// })
+
+socket.on("poll", function(poll){
+  console.log(poll)
+  // console.log("got a vote for "+vote)
+  // hand.className = vote;
+  // var selected = document.querySelector(".selected");
+  // selected.className = "";
+  // var finger = document.querySelector("li[value="+vote+"]");
+  // finger.className = "selected";
+})
+
+socket.on("count", function(count){
+  var c = document.querySelector("#count");
+  c.textContent = count;
 })

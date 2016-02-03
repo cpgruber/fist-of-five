@@ -249,6 +249,7 @@ input {
   height: 50px;
   font-size: 32px;
   margin: 30px auto;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */
