@@ -5,8 +5,10 @@
   margin: 0; }
 
 body {
-  width: 100vw;
-  background: #ccccff; }
+  width: 100vw; }
+
+.container {
+  background: rgba(255, 255, 255, 0.3); }
 
 .finger {
   -moz-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
@@ -213,7 +215,7 @@ body {
     border-radius: 5px;
     cursor: pointer; }
     #ui li.selected {
-      background: #6666ff; }
+      background: rgba(255, 255, 255, 0.6); }
   #ui .counts li {
     line-height: 30.7377px;
     height: 30.7377px;
@@ -222,11 +224,12 @@ body {
     font-size: 23.4375px; }
   #ui p {
     text-align: right;
-    padding: 5px; }
+    padding: 5px;
+    padding-right: 20px; }
 
 header {
   padding: 20px;
-  background: #9999ff;
+  background: rgba(255, 255, 255, 0.3);
   font-size: 54px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -235,7 +238,7 @@ header {
 footer {
   margin-top: 35vh;
   padding: 20px;
-  background: #9999ff;
+  background: rgba(255, 255, 255, 0.3);
   font-size: 22px;
   text-align: center;
   width: 100%; }
@@ -251,8 +254,8 @@ button {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  background: #0000ad;
-  color: white; }
+  background: rgba(255, 255, 255, 0.2);
+  color: black; }
   button.copy {
     margin-top: 0;
     font-size: 24px; }

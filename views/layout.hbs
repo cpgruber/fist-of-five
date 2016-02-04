@@ -8,13 +8,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    A Quick Fist-of-Five
-  </header>
-  {{{body}}}
-  <footer>
-    By <a target="_blank" href="http://cpgruber.github.io">Chase Gruber</a>.
-    Code <a target="_blank" href="http://github.com/cpgruber/fist-of-five">here</a>. 
-  </footer>
+  <div class="container">
+    <header>
+      A Quick Fist-of-Five
+    </header>
+    {{{body}}}
+    <footer>
+      By <a target="_blank" href="http://cpgruber.github.io">Chase Gruber</a>.
+      Code <a target="_blank" href="http://github.com/cpgruber/fist-of-five">here</a>.
+    </footer>
+  </div>
+  <script>
+    $(document).on("ready", function(){
+      var colors = ["brown","darkgreen","navy","darkorange","indigo","teal","goldenrod","darkred"];
+      document.body.style["background-color"] = colors[(Math.floor(Math.random() * colors.length))];
+    })
+  </script>
 </body>
 </html>
