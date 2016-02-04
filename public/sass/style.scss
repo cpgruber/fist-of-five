@@ -1,7 +1,6 @@
 // sass --watch public/sass/style.scss:public/css/style.css
 @import url(https://fonts.googleapis.com/css?family=VT323);
 $handColor: burlywood;
-// $heights: (20,22,21,18.5,19.5);
 $heights:(150,170,160,140,140);
 $mainOffset: 150;
 $thumbH: nth($heights, 5);

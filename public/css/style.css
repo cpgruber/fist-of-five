@@ -6,7 +6,7 @@
 
 body {
   width: 100vw;
-  background: #ffcccc; }
+  background: #ccccff; }
 
 .finger {
   -moz-transition: transform 0.75s, height 0.75s, background 0.75s, z-index 0.75s;
@@ -213,7 +213,7 @@ body {
     border-radius: 5px;
     cursor: pointer; }
     #ui li.selected {
-      background: #ff6666; }
+      background: #6666ff; }
   #ui .counts li {
     line-height: 30.7377px;
     height: 30.7377px;
@@ -226,7 +226,7 @@ body {
 
 header {
   padding: 20px;
-  background: #ff9999;
+  background: #9999ff;
   font-size: 54px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -235,7 +235,7 @@ header {
 footer {
   margin-top: 35vh;
   padding: 20px;
-  background: #ff9999;
+  background: #9999ff;
   font-size: 22px;
   text-align: center;
   width: 100%; }
@@ -251,7 +251,7 @@ button {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  background: #ad0000;
+  background: #0000ad;
   color: white; }
   button.copy {
     margin-top: 0;
