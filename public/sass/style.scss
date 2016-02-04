@@ -5,12 +5,7 @@ $heights:(150,170,160,140,140);
 $mainOffset: 150;
 $thumbH: nth($heights, 5);
 $dimension: 375;
-$bColors:(blue,red,green,orange,yellow,purple);
-$bIdx: random(length($bColors));
-@function getRandom(){
-  @return nth($bColors,$bIdx);
-}
-$bodyColor: red;//otherwise getRandom();
+
 @mixin whitewash($o){
   background: rgba(255,255,255,$o);
 }
@@ -175,7 +170,6 @@ body{
     cursor: pointer;
     &.selected{
       @include whitewash(0.60);
-      // background:lighten($bodyColor,20)
     }
   }
   .counts li{
@@ -194,7 +188,6 @@ body{
 header{
   padding:20px;
   @include whitewash(0.3);
-  // background:lighten($bodyColor,30);
   font-size: 54px;
   font-weight: bold;
   margin-bottom:20px;
@@ -204,7 +197,6 @@ footer{
   margin-top:35vh;
   padding:20px;
   @include whitewash(0.3);
-  // background:lighten($bodyColor,30);
   font-size: 22px;
   text-align: center;
   width:100%;
@@ -221,8 +213,6 @@ button{
   border-radius: 10px;
   cursor:pointer;
   @include whitewash(0.2);
-  // background: darken($bodyColor,16);
-  color:black;
   &.copy{
     margin-top:0;
     font-size:24px;

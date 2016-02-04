@@ -23,10 +23,11 @@ function generateCode(){
 
 app.get("/:id", function(req,res){
   Poll.findOne({code:req.params.id}, function(err,doc){
+    console.log(err)
     if(!err && doc){
       res.render("poll.hbs");
     }else{
-      res.send("Whoops, that poll isn't here")
+      res.render("404.hbs")
     }
   })
 })

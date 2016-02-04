@@ -254,8 +254,7 @@ button {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.2);
-  color: black; }
+  background: rgba(255, 255, 255, 0.2); }
   button.copy {
     margin-top: 0;
     font-size: 24px; }
