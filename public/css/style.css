@@ -32,23 +32,15 @@ body {
 #palm {
   position: absolute;
   bottom: 0;
-  left: 17%;
-  width: 63%;
-  height: 40%;
+  left: 16%;
+  width: 64%;
+  height: 58%;
   border: 1px solid black;
-  border-radius: 10%;
+  border-top: none;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  background: #e9d0af; }
-
-#finger-block {
-  position: absolute;
-  left: 20%;
-  width: 80%;
-  height: 83%;
-  bottom: -1px;
   background: #e9d0af;
-  z-index: 0; }
+  z-index: 1; }
 
 #hand {
   position: relative;
@@ -237,14 +229,16 @@ header {
   background: #ff9999;
   font-size: 54px;
   font-weight: bold;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  width: 100%; }
 
 footer {
   margin-top: 35vh;
   padding: 20px;
   background: #ff9999;
   font-size: 22px;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
 button {
   margin: 0 auto;
