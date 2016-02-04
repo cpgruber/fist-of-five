@@ -292,4 +292,9 @@ a {
   a:hover {
     font-weight: bold; }
 
+h2 {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 36px; }
+
 /*# sourceMappingURL=style.css.map */

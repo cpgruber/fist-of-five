@@ -1,5 +1,5 @@
-<h1>That is not a valid poll!</h1>
-<div id="hand" class="tapping">
+<h2>That is not a valid poll!</h2>
+<div id="hand" class="zero">
   <div id="palm"></div>
   <div id="fingers">
     <div class="fifth finger"></div>
@@ -9,3 +9,18 @@
     <div class="fourth finger"></div>
   </div>
 </div>
+<h2><a href="/">aqfof home</a></h2>
+<script type="text/javascript">
+$(document).ready(function(){
+  var states = ["zero","one","two","three","four","five"];
+  var ct = 0;
+  var asc = true;
+  var hand = document.querySelector("#hand");
+  setInterval(function(){
+    hand.className = states[ct];
+    if(asc){ct++}else{ct--};
+    if(ct==6){asc=false;ct=5};
+    if(ct==-1){asc=true;ct=0};
+  },500)
+})
+</script>
