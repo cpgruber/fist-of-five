@@ -25,13 +25,14 @@ $pFont:'VT323',sans-serif;
 }
 @mixin fingerDown($h){
   height:($h)+px;
-  transform:translateY(($h - $mainOffset)+px)
+  transform:translateY(($h - $mainOffset)+px)rotateX(-360deg);
 }
 @mixin fingerUp($h){
   height:($h)+px;
   background:lighten($handColor,10);
   z-index:0;
   transform:translateY(($h - $mainOffset + 20)+px)rotateX(-165deg);
+  border-top:none;
 }
 @mixin thumb($h,$a,$z,$x){
   height:($h)+px;
@@ -145,6 +146,9 @@ body{
       background:lighten($handColor,10);
       border-bottom:none;
     }
+  }
+  &.tapping{
+
   }
 }
 #ui{

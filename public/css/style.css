@@ -53,16 +53,16 @@ body {
     z-index: 1; }
   #hand.zero .first {
     height: 150px;
-    transform: translateY(0px); }
+    transform: translateY(0px) rotateX(-360deg); }
   #hand.zero .second {
     height: 170px;
-    transform: translateY(20px); }
+    transform: translateY(20px) rotateX(-360deg); }
   #hand.zero .third {
     height: 160px;
-    transform: translateY(10px); }
+    transform: translateY(10px) rotateX(-360deg); }
   #hand.zero .fourth {
     height: 140px;
-    transform: translateY(-10px); }
+    transform: translateY(-10px) rotateX(-360deg); }
   #hand.zero .fifth {
     height: 140px;
     transform-origin: bottom;
@@ -74,16 +74,17 @@ body {
     height: 150px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(20px) rotateX(-165deg); }
+    transform: translateY(20px) rotateX(-165deg);
+    border-top: none; }
   #hand.one .second {
     height: 170px;
-    transform: translateY(20px); }
+    transform: translateY(20px) rotateX(-360deg); }
   #hand.one .third {
     height: 160px;
-    transform: translateY(10px); }
+    transform: translateY(10px) rotateX(-360deg); }
   #hand.one .fourth {
     height: 140px;
-    transform: translateY(-10px); }
+    transform: translateY(-10px) rotateX(-360deg); }
   #hand.one .fifth {
     height: 140px;
     transform-origin: bottom;
@@ -95,18 +96,20 @@ body {
     height: 150px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(20px) rotateX(-165deg); }
+    transform: translateY(20px) rotateX(-165deg);
+    border-top: none; }
   #hand.two .second {
     height: 170px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(40px) rotateX(-165deg); }
+    transform: translateY(40px) rotateX(-165deg);
+    border-top: none; }
   #hand.two .third {
     height: 160px;
-    transform: translateY(10px); }
+    transform: translateY(10px) rotateX(-360deg); }
   #hand.two .fourth {
     height: 140px;
-    transform: translateY(-10px); }
+    transform: translateY(-10px) rotateX(-360deg); }
   #hand.two .fifth {
     height: 140px;
     transform-origin: bottom;
@@ -118,20 +121,23 @@ body {
     height: 150px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(20px) rotateX(-165deg); }
+    transform: translateY(20px) rotateX(-165deg);
+    border-top: none; }
   #hand.three .second {
     height: 170px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(40px) rotateX(-165deg); }
+    transform: translateY(40px) rotateX(-165deg);
+    border-top: none; }
   #hand.three .third {
     height: 160px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(30px) rotateX(-165deg); }
+    transform: translateY(30px) rotateX(-165deg);
+    border-top: none; }
   #hand.three .fourth {
     height: 140px;
-    transform: translateY(-10px); }
+    transform: translateY(-10px) rotateX(-360deg); }
   #hand.three .fifth {
     height: 140px;
     transform-origin: bottom;
@@ -143,22 +149,26 @@ body {
     height: 150px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(20px) rotateX(-165deg); }
+    transform: translateY(20px) rotateX(-165deg);
+    border-top: none; }
   #hand.four .second {
     height: 170px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(40px) rotateX(-165deg); }
+    transform: translateY(40px) rotateX(-165deg);
+    border-top: none; }
   #hand.four .third {
     height: 160px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(30px) rotateX(-165deg); }
+    transform: translateY(30px) rotateX(-165deg);
+    border-top: none; }
   #hand.four .fourth {
     height: 140px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(10px) rotateX(-165deg); }
+    transform: translateY(10px) rotateX(-165deg);
+    border-top: none; }
   #hand.four .fifth {
     height: 140px;
     transform-origin: bottom;
@@ -170,22 +180,26 @@ body {
     height: 150px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(20px) rotateX(-165deg); }
+    transform: translateY(20px) rotateX(-165deg);
+    border-top: none; }
   #hand.five .second {
     height: 170px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(40px) rotateX(-165deg); }
+    transform: translateY(40px) rotateX(-165deg);
+    border-top: none; }
   #hand.five .third {
     height: 160px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(30px) rotateX(-165deg); }
+    transform: translateY(30px) rotateX(-165deg);
+    border-top: none; }
   #hand.five .fourth {
     height: 140px;
     background: #e9d0af;
     z-index: 0;
-    transform: translateY(10px) rotateX(-165deg); }
+    transform: translateY(10px) rotateX(-165deg);
+    border-top: none; }
   #hand.five .fifth {
     height: 140px;
     transform-origin: bottom;
