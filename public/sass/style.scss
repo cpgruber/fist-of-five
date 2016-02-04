@@ -199,6 +199,7 @@ header{
   font-size: 54px;
   font-weight: bold;
   margin-bottom:20px;
+  width:100%;
 }
 footer{
   margin-top:35vh;
@@ -206,6 +207,7 @@ footer{
   background:lighten($bodyColor,30);
   font-size: 22px;
   text-align: center;
+  width:100%;
 }
 button{
   margin:0 auto;
