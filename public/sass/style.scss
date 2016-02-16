@@ -1,6 +1,8 @@
 // sass --watch public/sass/style.scss:public/css/style.css
 @import url(https://fonts.googleapis.com/css?family=VT323);
-$handColor: burlywood;
+
+$baseHand: burlywood;
+$lightHand:lighten($baseHand,10);
 $heights:(150,170,160,140,140);
 $mainOffset: 150;
 $thumbH: nth($heights, 5);
@@ -29,7 +31,7 @@ $pFont:'VT323',sans-serif;
 }
 @mixin fingerUp($h){
   height:($h)+px;
-  background:lighten($handColor,10);
+  background:$lightHand;
   z-index:0;
   transform:translateY(($h - $mainOffset + 20)+px)rotateX(-165deg);
   border-top:none;
@@ -80,7 +82,7 @@ body{
   width:20%;
   border:1px solid black;
   border-radius: 10%;
-  background-color: $handColor;
+  background-color: $baseHand;
 }
 #fingers{
   position:absolute;
@@ -100,7 +102,7 @@ body{
   border-top:none;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  background:lighten($handColor,10);
+  background:$lightHand;
   z-index:1;
 }
 #hand{
@@ -143,7 +145,7 @@ body{
     @include handState(5);
     .fifth{
       @include thumb($thumbH,-50,1,65);
-      background:lighten($handColor,10);
+      background:$lightHand;
       border-bottom:none;
     }
   }
