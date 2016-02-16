@@ -2,24 +2,22 @@ $(document).ready(function(){
   var baseUrl = window.location.origin;
   $(".generate").on("click", function(e){
     e.preventDefault();
+    var prompt = $("input[name=prompt]").val();
     $.ajax({
       url: baseUrl,
       method: "POST",
-      data: {},
+      data: JSON.stringify({prompt:prompt}),
       contentType : "application/json"
     }).then(function(response){
       var code = response.code;
       var url = baseUrl+"/"+code;
-      $("input").val(url);
+      $("input[name=url]").val(url);
     })
-  })
+  });
 
-
-  var copy = document.querySelector('.copy');
-  copy.addEventListener('click', function(e) {
+  $(".copy").on('click', function(e) {
     e.preventDefault();
-    var copyTextarea = document.querySelector('input');
-    copyTextarea.select();
+    $("input[name=url]").select();
     try {
       var successful = document.execCommand('copy');
       var msg = successful ? 'successful' : 'unsuccessful';

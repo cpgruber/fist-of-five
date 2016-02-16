@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cpgruber/fist-of-five#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "fs": "0.0.2",
     "hbs": "^4.0.0",

@@ -3,6 +3,9 @@ var hbs = require("hbs");
 var randomString = require("random-string");
 var app = express();
 var Poll = require("./models/poll");
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.set('view engine', 'hbs');
 app.set("views","./views");
@@ -23,9 +26,9 @@ function generateCode(){
 
 app.get("/:id", function(req,res){
   Poll.findOne({code:req.params.id}, function(err,doc){
-    console.log(err)
     if(!err && doc){
-      res.render("poll.hbs");
+      console.log(doc)
+      res.render("poll.hbs", {"doc": doc});
     }else{
       res.render("404.hbs")
     }
@@ -39,7 +42,7 @@ app.get("/", function(req,res){
 //todo: write poll results to database
 app.post("/", function(req,res){
   generateCode().then(function(usercode){
-    var newPoll = new Poll({createdAt:new Date(),code:usercode})
+    var newPoll = new Poll({createdAt:new Date(),code:usercode,prompt:req.body.prompt})
     newPoll.save(function(err, doc){
       if(!err){
         res.json({code:doc.code})
@@ -60,14 +63,14 @@ function makeNewPoll(){
 io.on('connection', function(socket){
   socket.on("join room", function (room) {
     socket.join(room);
-    console.log("joined "+room);
+    // console.log("joined "+room);
     clients[socket.id] = {room:room,vote:null,lastVote:null};
     if (!rooms[room]){
       rooms[room] = {count:1,poll:makeNewPoll()}
     }else{
       rooms[room].count++;
     }
-    console.log("Welcome, "+rooms[room].count+" in room.")
+    // console.log("Welcome, "+rooms[room].count+" in room.")
     io.in(room).emit("count",rooms[room].count)
     io.in(room).emit("poll",rooms[room].poll)
   })
@@ -89,9 +92,9 @@ io.on('connection', function(socket){
   socket.on("disconnect", function(){
     var roomId = clients[socket.id].room;
     var room = rooms[roomId];
-    console.log("left "+roomId)
+    // console.log("left "+roomId)
     room.count--;
-    console.log("Goodbye. Now "+room.count+" in room.");
+    // console.log("Goodbye. Now "+room.count+" in room.");
     io.in(roomId).emit("count",room.count)
 
     var last = clients[socket.id].vote;
