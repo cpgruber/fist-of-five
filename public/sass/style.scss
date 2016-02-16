@@ -28,18 +28,22 @@ $pFont:'VT323',sans-serif;
 @mixin fingerDown($h){
   height:($h)+px;
   transform:translateY(($h - $mainOffset)+px)rotateX(-360deg);
+  -webkit-transform:translateY(($h - $mainOffset)+px)rotateX(-360deg);
 }
 @mixin fingerUp($h){
   height:($h)+px;
   background:$lightHand;
   z-index:0;
   transform:translateY(($h - $mainOffset + 20)+px)rotateX(-165deg);
+  -webkit-transform:translateY(($h - $mainOffset + 20)+px)rotateX(-165deg);
   border-top:none;
 }
 @mixin thumb($h,$a,$z,$x){
   height:($h)+px;
   transform-origin: bottom;
-  transform: translateY(-25px)translateX(($x)+px)rotate(($a)+deg);
+  -webkit-transform-origin: bottom;
+  transform:translateY(-25px)translateX(($x)+px)rotate(($a)+deg);
+  -webkit-transform:translateY(-25px)translateX(($x)+px)rotate(($a)+deg);
   z-index:$z;
 }
 @mixin upDown($idx,$finger,$h){
