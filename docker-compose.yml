@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  fof:
+    build: .
+    environment: 
+      - MONGOLAB_URI=database:27017/fof
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+    links:
+      - database
+  database:
+    image: mongo
+    ports:
+      - 27017:27017
